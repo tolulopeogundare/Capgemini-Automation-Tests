@@ -20,7 +20,7 @@ public class LoginPage extends PageObjectUtility {
     }
 
     public void enterEmailToCreateAccount() throws IOException {
-        String email = getDataFromLocale("email.prefix") + getRandomNumber() + "@capgemini.com";
+        String email = getDataFromLocale("email.prefix") + getRandomNumber() + "@gmail.com";
         waitForExpectedElement(createAccountEmail).clear();
         waitForElementVisible(createAccountEmail).sendKeys(email);
         loginPageDataModel.setNewAccountEmail(email);
@@ -35,7 +35,4 @@ public class LoginPage extends PageObjectUtility {
         waitForElementVisible(userPassword).sendKeys(getDataFromLocale("user.password"));
         waitForElementVisible(signInBtn).click();
     }
-
-
-
 }

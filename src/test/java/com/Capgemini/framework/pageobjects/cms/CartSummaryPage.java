@@ -37,5 +37,4 @@ public class CartSummaryPage extends PageObjectUtility {
     public boolean doesCartContainItemAdded(Double price){
         return trimDollarAndConvertToDouble(getCartItemListPrices().get(0).getText().trim()).equals(price) && getCartItemListPrices().size()==1;
     }
-
 }

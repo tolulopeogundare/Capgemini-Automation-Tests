@@ -41,6 +41,7 @@ public class CreateAccountPage extends PageObjectUtility {
 
     public void addRegistrationInformation() throws IOException, InterruptedException {
         List<String> dob = Arrays.asList(getDataFromLocale("dob").split("/"));
+
         clickMrTitle();
         registrationHelper(personalInfoFirstName, "firstname");
         registrationHelper(personalInfoLastName, "lastname");
@@ -66,21 +67,4 @@ public class CreateAccountPage extends PageObjectUtility {
     }
 
     public void clickRegisterBtn(){ waitForElementVisible(registerBtn).click(); }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

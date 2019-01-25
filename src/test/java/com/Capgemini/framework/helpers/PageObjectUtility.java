@@ -61,21 +61,6 @@ public class PageObjectUtility {
         return act;
     }
 
-    public boolean trimStringAndCheckIfRounded(String value){
-        boolean checkValue = false;
-        Integer.parseInt(value.replaceAll("[^0-9.]", "").trim());
-        checkValue = true;
-        return checkValue;
-    }
-
-    public WebElement visibilityOf(final WebElement element) {
-        return (new WebDriverWait(driver, 30)).until(ExpectedConditions.visibilityOf(element));
-    }
-
-    public boolean invisibilityOf(WebElement element) {
-        return (new WebDriverWait(driver, 30)).until(ExpectedConditions.invisibilityOf(element));
-    }
-
     public List<WebElement> visibilityOfAllElementsLocatedBy(final By by){
         return wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
     }
@@ -90,11 +75,6 @@ public class PageObjectUtility {
         ele.click();
         Select selectFromDropdown = new Select(ele);
         selectFromDropdown.selectByValue(value);
-    }
-
-    public String getFirstSelected(WebElement ele){
-        Select selectFromDropdown = new Select(ele);
-        return selectFromDropdown.getFirstSelectedOption().getText();
     }
 
     public void clickElementUsingJavascriptExecutor(WebElement ele){

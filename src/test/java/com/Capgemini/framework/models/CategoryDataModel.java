@@ -8,5 +8,4 @@ import lombok.Setter;
 @Getter
 public class CategoryDataModel {
     private Double itemPrice;
-
 }

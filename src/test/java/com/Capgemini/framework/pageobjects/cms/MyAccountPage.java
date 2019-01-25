@@ -31,5 +31,4 @@ public class MyAccountPage extends PageObjectUtility {
     public void clickSignOut(){ waitForElementVisible(signOut).click(); }
 
     public void clickCartBtn(){ waitForElementVisible(cart).click(); }
-
 }

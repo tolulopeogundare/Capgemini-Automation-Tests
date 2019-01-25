@@ -15,15 +15,9 @@ import java.io.IOException;
 public class HomepageSteps {
 
     private HomePage homePage;
-    private CreateAccountPage createAccountPage;
-    private LoginPage loginPage;
-    private MyAccountPage myAccountPage;
 
-    public HomepageSteps(HomePage homePage, CreateAccountPage createAccountPage, LoginPage loginPage, MyAccountPage myAccountPage){
+    public HomepageSteps(HomePage homePage){
         this.homePage = homePage;
-        this.createAccountPage = createAccountPage;
-        this.loginPage = loginPage;
-        this.myAccountPage = myAccountPage;
     }
 
     @Given("^I am on homepage$")
@@ -34,27 +28,5 @@ public class HomepageSteps {
     @And("^I navigate to sign in page$")
     public void iNavigateToCreateAccountPage(){
         homePage.clickSignIn();
-    }
-
-    @And("^I enter my email to register$")
-    public void iEnterMyEmailToRegister() throws IOException {
-        loginPage.enterEmailToCreateAccount();
-        loginPage.clickCreateAccountBtn();
-    }
-
-    @And("^I complete registration details$")
-    public void iEnterMyRegistrationDetails() throws IOException, InterruptedException {
-        createAccountPage.addRegistrationInformation();
-    }
-
-    @And("^I click register$")
-    public void iClickRegister(){
-        createAccountPage.clickRegisterBtn();
-    }
-
-    @Then("I verify I am taken to My Account page")
-    public void iVerifyIamTakenToMyAccountPage() throws IOException, InterruptedException {
-        Assert.assertTrue(myAccountPage.amIOnMyAccountPage());
-        myAccountPage.clickSignOut();
     }
 }
