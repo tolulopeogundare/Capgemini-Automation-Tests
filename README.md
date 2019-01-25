@@ -10,3 +10,7 @@ To run test via command prompt
 3. cd to the directory where the framework is located.
 4. Do "mvn compile" (to compile the framework and download all dependencies)
 5. Do "mvn install test" (to run all tests)
+
+NOTE:
+-----------------------------------
+Cart.feature test is failing as expected due the functionality NOT being present on the web application.
